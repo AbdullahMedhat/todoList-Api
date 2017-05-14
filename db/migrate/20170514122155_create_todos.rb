@@ -3,7 +3,7 @@ class CreateTodos < ActiveRecord::Migration[5.0]
     create_table :todos do |t|
       t.string :title,                    null: false
       t.belongs_to :todoList,             null: false
-
+      
       t.timestamps
     end
   end
