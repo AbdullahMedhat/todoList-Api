@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, uniqueness: true, presence: true
-  validates :firsName, presence: true
+  validates :firstName, presence: true
 
-  has_many :todoLists
+  has_many :todolists
 end
