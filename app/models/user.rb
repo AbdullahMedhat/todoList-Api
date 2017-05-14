@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates :firsName, presence: true
+
+  has_many :todoLists
 end
