@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516043110) do
-
+ActiveRecord::Schema.define(version: 20170516082248) do
   create_table "todolists", force: :cascade do |t|
     t.integer  "user_id",                 null: false
     t.string   "name",       default: "", null: false
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170516043110) do
     t.integer  "todoList_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "checked"
     t.index ["todoList_id"], name: "index_todos_on_todoList_id"
   end
 
