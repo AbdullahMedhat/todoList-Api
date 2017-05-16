@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     mount_devise_token_auth_for 'User', at: 'auth'
   end
   
-  resources :todoLists, only: [ :index, :update, :create, :destroy ]
+  resources :todo_lists, only: [ :index, :update, :create, :destroy ]
   resources :todos, only: [ :index, :update, :create, :destroy ]
   
   # The priority is based upon order of creation: first created -> highest priority.
