@@ -1,14 +1,14 @@
-class TodoListsController < ApplicationController
+class TodolistsController < ApplicationController
+  skip_before_action :authenticate_custom
   def index
-    @todoLists = Todolists.all
+    @todolists = Todolist.all
     respond_to do |format|
-      format.json {render :json =>@items}
+      format.json {render :json =>@todolists}
     end
   end
 
   def update
-    # byebug
-    @todoLists = Todolists.find params[:id]
+    @todoLists = Todolist.find params[:id]
     @todoLists.update! todoLists_params
     respond_to do |format|
       format.json {render :json => @todoLists}
@@ -16,7 +16,7 @@ class TodoListsController < ApplicationController
   end
 
   def create
-    @todoLists = Todolists.new todoLists_params
+    @todoLists = Todolist.new todoLists_params
     @todoLists.save!
     respond_to do |format|
       format.json {render :json => @todoLists}
@@ -24,7 +24,7 @@ class TodoListsController < ApplicationController
   end
 
   def destroy
-    @todoLists = Todolists.find params[:id]
+    @todoLists = Todolist.find params[:id]
     @todoLists.destroy!
     respond_to do |format|
       format.json {render :json => @todoLists}

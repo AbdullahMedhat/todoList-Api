@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  namespace :api do
-    mount_devise_token_auth_for 'User', at: 'auth'
-  end
+  mount_devise_token_auth_for 'User', at: 'auth'
+
+  resources :todolists
+  resources :todos
+
   
   resources :todo_lists, only: [ :index, :update, :create, :destroy ]
   resources :todos, only: [ :index, :update, :create, :destroy ]
