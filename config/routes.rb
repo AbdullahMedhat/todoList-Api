@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+  mount_devise_token_auth_for 'User', at: 'auth'
+
+  resources :todolists
+  resources :todos
+=======
   namespace :api do
     mount_devise_token_auth_for 'User', at: 'auth'
   end
@@ -6,6 +12,7 @@ Rails.application.routes.draw do
   resources :todo_lists, only: [ :index, :update, :create, :destroy ]
   resources :todos, only: [ :index, :update, :create, :destroy ]
   
+>>>>>>> 342b3f3cd7775d3e329bb2af2df30988da38f51a
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,5 +1,5 @@
 class AddClumnCheckedForTodos < ActiveRecord::Migration[5.0]
-  def change
-    add_column :todos, :checked, :string
+  change_table(:todos) do |t| 
+    t.string :checked 
   end
 end
