@@ -1,33 +1,25 @@
 class TodosController < ApplicationController
   def index
     @todos = Todo.all
-    respond_to do |format|
-      format.json {render :json =>@todos}
-    end
+    render json: @todos
   end
 
   def update
     @todos = Todo.find params[:id]
     @todos.update! todos_params
-    respond_to do |format|
-      format.json {render :json => @todos}
-    end
+    render json: @todos
   end
 
   def create
     @todos = Todo.new todos_params
     @todos.save!
-    respond_to do |format|
-      format.json {render :json => @todos}
-    end
+    render json: @todos
   end
 
   def destroy
     @todos = Todo.find params[:id]
     @todos.destroy!
-    respond_to do |format|
-      format.json {render :json => @todos}
-    end
+    render json: @todos
   end
 
   private
